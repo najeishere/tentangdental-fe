@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+:root {
+  --color-primary: #1cb5bd;
+  --color-primary-dark: #11858c;
+  --color-primary-light: #e8f8f8;
+  --color-text-dark: #172126;
+  --color-text-mid: #65737a;
+  --color-text-muted: #94a0a6;
+  --color-border: #e2e8ea;
+  --color-bg: #f5f8f9;
+  --color-card: #ffffff;
+}
+
+/* Hide scrollbars by default, show on hover */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d1d9dc; border-radius: 4px; }
+
+/* ───────────────────── DARK MODE ─────────────────────
+   Desain memakai warna hex arbitrer, jadi override per-utility
+   saat root punya kelas .dark (toggle di sidebar). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+.dark {
+  color-scheme: dark;
+}
+
+/* Surfaces utama */
+.dark .bg-white { background-color: #161c22; }
+.dark .bg-\[\#f5f8f9\] { background-color: #0e1418; }
+.dark .bg-\[\#f6f8f9\] { background-color: #12181e; }
+.dark .bg-\[\#fbfcfc\] { background-color: #12181e; }
+.dark .bg-\[\#e8f8f8\] { background-color: #123a3b; }
+.dark .bg-\[\#e9f7f1\] { background-color: #143227; }
+.dark .bg-\[\#f5ecea\] { background-color: #332523; }
+.dark .bg-\[\#f0f4ff\] { background-color: #202b4a; }
+.dark .bg-\[\#fff6dd\] { background-color: #3a3218; }
+.dark .bg-\[\#fff4f0\] { background-color: #3a2620; }
+.dark .bg-\[\#d4f1f1\] { background-color: #143f40; }
+.dark .bg-\[\#18353a\] { background-color: #1f3d41; }
+.dark .bg-\[\#172126\] { background-color: #0c1115; }
+
+/* Bordir & pembagi */
+.dark .border-\[\#e2e8ea\] { border-color: #26313a; }
+.dark .border-\[\#e5eaec\] { border-color: #26313a; }
+.dark .border-\[\#f0f4f5\] { border-color: #26313a; }
+.dark .border-\[\#1cb5bd\] { border-color: #3aa6ac; }
+.dark .divide-\[\#f0f4f5\] > :not([hidden]) ~ :not([hidden]) { border-color: #26313a; }
+
+/* Teks */
+.dark .text-\[\#172126\] { color: #e2e9ee; }
+.dark .text-\[\#65737a\] { color: #9fb0b8; }
+.dark .text-\[\#94a0a6\] { color: #78878f; }
+.dark .text-\[\#1cb5bd\] { color: #56d3da; }
+.dark .text-\[\#11858c\] { color: #55c7cd; }
+.dark .text-\[\#16815d\] { color: #34d399; }
+.dark .text-\[\#18353a\] { color: #a9c2c5; }
+.dark .text-\[\#3b5bdb\] { color: #8195f3; }
+.dark .text-\[\#c2410c\] { color: #fb923c; }
+.dark .text-\[\#b7781f\],
+.dark .text-\[\#b7791f\] { color: #fbbf24; }
+.dark .text-\[\#b8786e\] { color: #d8a09a; }
+.dark .text-\[\#afc3c6\] { color: #8aa5ab; }
+.dark .text-\[\#b9c9cc\] { color: #8aa5ab; }
+
+/* Warna semantik standar Tailwind */
+.dark .text-green-600 { color: #4ade80; }
+.dark .text-green-700 { color: #4ade80; }
+.dark .text-amber-700 { color: #fbbf24; }
+.dark .text-red-500 { color: #f87171; }
+.dark .text-red-600 { color: #f87171; }
+.dark .text-gray-600 { color: #9fb0b8; }
+.dark .bg-green-100 { background-color: #143227; }
+.dark .bg-red-100 { background-color: #3a1d1a; }
+.dark .bg-amber-100 { background-color: #3a3218; }
+.dark .bg-purple-100 { background-color: #2c2350; }
+.dark .bg-gray-100 { background-color: #1a2229; }
+
+/* Hover */
+.dark .hover\:bg-\[\#f5f8f9\]:hover { background-color: #1a2229; }
+.dark .hover\:bg-red-50:hover { background-color: rgba(248, 113, 113, 0.12); }
+.dark .hover\:border-\[\#1cb5bd\]:hover { border-color: #3aa6ac; }
+.dark .hover\:text-\[\#65737a\]:hover { color: #b7c5cc; }
+.dark .hover\:text-\[\#11858c\]:hover { color: #61d0d7; }
+
+/* Input/select terkunci saat edit invoice berbayar */
+.dark .disabled\:bg-\[\#f5f8f9\]:disabled { background-color: #10161b; }
+
+/* Scrollbar gelap */
+.dark ::-webkit-scrollbar-thumb { background: #2f3b44; }
