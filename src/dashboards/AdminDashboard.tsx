@@ -44,7 +44,7 @@ export interface VisitType {
   total: number | string;
   patient: { id: number; name: string; phone?: string } | null;
   doctor: { id: number; name: string } | null;
-  items: { id: number; tindakan_id: number | null; tarif_name: string; price: number | string; total: number | string }[];
+  items: { id: number; tindakan_id: number | null; quantity?: number; tarif_name: string; price: number | string; total: number | string }[];
   payments: PaymentType[];
 }
 
@@ -329,7 +329,7 @@ function BillingView({ visits, openPay, openCreate, openEdit, doDelete }: Omit<M
                   <div className="space-y-2">
                     {v.items.map((item) => (
                       <div key={item.id} className="flex justify-between text-sm">
-                        <span className="text-[#65737a]">{item.tarif_name}</span>
+                        <span className="text-[#65737a]">{item.quantity && item.quantity > 1 ? `${item.quantity}× ` : ""}{item.tarif_name}</span>
                         <span className="font-medium text-[#172126]">{rupiah(item.total)}</span>
                       </div>
                     ))}
